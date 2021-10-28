@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/p/{post}', [App\Http\Controllers\PostController::class, 'show']);
 Route::get('/p/create', [App\Http\Controllers\PostController::class, 'create']);
 Route::post('/p', [App\Http\Controllers\PostController::class, 'store']);
 
