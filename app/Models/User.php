@@ -57,6 +57,10 @@ class User extends Authenticatable
         return $this->hasMany(Post::class)->OrderBY('created_at','DESC');
     }
 
+    public function following(){
+        return $this->belongsToMany(Profile::class);
+    }
+
     public function profile() {
         return $this->hasOne(Profile::class);
     }
